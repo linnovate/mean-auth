@@ -1,29 +1,30 @@
 {
   "name": "mean-auth",
   "version": "0.0.1",
-  "description": "Allows users to sign up and login to the site.",
+  "description": "Allow users to register and login to the site",
   "author": "Linnovate <mean@linnovate.net>",
-  "contributors": [
-    {
-      "name": "Drew Fyock",
-      "mail": "drew@steelbisondev.com"
-    },
-    {
-      "name": "Yonatan Ellman",
-      "mail": "yonatan@linnovate.net"
-    },
-    {
-      "name": "Lior Kesos",
-      "mail": "lior@linnovate.net"
-    }
-  ],
+  "contributors": [{
+    "name": "Drew Fyock",
+    "mail": "drew@steelbisondev.com"
+  }, {
+    "name": "Yonatan Ellman",
+    "mail": "yonatan@linnovate.net"
+  }, {
+    "name": "Lior Kesos",
+    "mail": "lior@linnovate.net"
+  }],
   "mean": "0.3.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linnovate/mean-auth.git"
+  },
   "engines": {
     "node": "0.10.x",
     "npm": "1.4.x"
   },
   "dependencies": {
     "lodash": "^2.4.1",
+    "mean-user": "^0.0.1",
     "passport": "^0.2.0",
     "passport-facebook": "^1.0.3",
     "passport-github": "^0.1.5",
