@@ -7,15 +7,10 @@ module.exports = function(Auth, app, passport) {
 
     app.route('/logout')
         .get(users.signout);
-    app.route('/users/me')
-        .get(users.me);
 
     // Setting up the users api
     app.route('/register')
         .post(users.create);
-
-    // Setting up the userId param
-    app.param('userId', users.user);
 
     // AngularJS route to check for authentication
     app.route('/loggedin')
