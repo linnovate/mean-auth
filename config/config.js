@@ -13,5 +13,6 @@ process.env.NODE_ENV = ~fs.readdirSync(__dirname + '/env').map(function(file) {
 // Extend the base configuration in all.js with environment
 // specific configuration
 module.exports = _.extend(
-    require('./env/' + process.env.NODE_ENV) || {}
+    require('./env/' + process.env.NODE_ENV) || {},
+    require(process.cwd() + '/config/env/' + process.env.NODE_ENV) || {}
 );
