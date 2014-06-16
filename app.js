@@ -15,11 +15,13 @@ var passport = require('passport');
  * All MEAN packages require registration
  * Dependency injection is used to define required modules
  */
-Auth.register(function(app, database) {
+Auth.register(function(app) {
 
     //We enable routing. By default the Package Object is passed to the routes
-    Auth.routes(app, passport, database);
+    Auth.routes(app, passport);
 
+    Auth.angularDependencies(['mean.auth']);
+    
     mean.events.on('modulesFound', function() {
         require('./server/config/passport')(passport);
 
@@ -28,7 +30,7 @@ Auth.register(function(app, database) {
             return passport;
         });
         // Register auth dependency
-        mean.register('authorization', function() {
+        mean.register('auth', function() {
             // This needs to be replaced with proper package middleware handling.
             return require('./server/routes/middlewares/authorization');
         });
